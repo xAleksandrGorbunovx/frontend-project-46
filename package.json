@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": "hexlet project difference",
+  "description": "hexlet project difference is project to compare files",
   "main": "src/index.js",
   "scripts": {
     "test": "npx jest"
