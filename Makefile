@@ -13,7 +13,8 @@ run:
 test:
 	npm test
 
-test-coverge:
+test-coverage:
+	npx jest --coverage
 
 lint:
 	npx eslint .
