@@ -25,6 +25,7 @@ const gendiff = (filepath1, filepath2) => {
   const keys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
   console.log(keys);
 
+  // Переделать на map или reduse
   const result = ['{'];
   for (const key of keys) {
     if (!Object.hasOwn(data2, key)) {
