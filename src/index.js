@@ -26,20 +26,36 @@ const gendiff = (filepath1, filepath2) => {
   console.log(keys);
 
   // Переделать на map или reduse
-  const result = ['{'];
-  for (const key of keys) {
+  const result = keys.reduce((acc, key) => {
     if (!Object.hasOwn(data2, key)) {
-      result.push(`  - ${key}: ${data1[key]}`);
+      acc.push(`  - ${key}: ${data1[key]}`);
     } else if (!Object.hasOwn(data1, key)) {
-      result.push(`  + ${key}: ${data2[key]}`);
+      acc.push(`  + ${key}: ${data2[key]}`);
     } else if (data1[key] === data2[key]) {
-      result.push(`    ${key}: ${data2[key]}`);
+      acc.push(`    ${key}: ${data2[key]}`);
     } else {
-      result.push(`  - ${key}: ${data1[key]}`);
-      result.push(`  + ${key}: ${data1[key]}`);
+      acc.push(`  - ${key}: ${data1[key]}`);
+      acc.push(`  + ${key}: ${data1[key]}`);
     }
-  }
-  result.push('}');
-  return result.join('\n');
+    return acc;
+  }, ['{']);
+
+  return `${result.join('\n')}\n}`;
+
+//   const result = ['{'];
+//   for (const key of keys) {
+//     if (!Object.hasOwn(data2, key)) {
+//       result.push(`  - ${key}: ${data1[key]}`);
+//     } else if (!Object.hasOwn(data1, key)) {
+//       result.push(`  + ${key}: ${data2[key]}`);
+//     } else if (data1[key] === data2[key]) {
+//       result.push(`    ${key}: ${data2[key]}`);
+//     } else {
+//       result.push(`  - ${key}: ${data1[key]}`);
+//       result.push(`  + ${key}: ${data1[key]}`);
+//     }
+//   }
+//   result.push('}');
+//   return result.join('\n');
 };
 export default gendiff;
