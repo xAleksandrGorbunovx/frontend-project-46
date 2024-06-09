@@ -6,3 +6,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/804241963446cf5b0b5c/maintainability)](https://codeclimate.com/github/xAleksandrGorbunovx/frontend-project-46/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/804241963446cf5b0b5c/test_coverage)](https://codeclimate.com/github/xAleksandrGorbunovx/frontend-project-46/test_coverage)
+
+https://asciinema.org/a/rogaXWypa7pmresRphOH8OvLB
