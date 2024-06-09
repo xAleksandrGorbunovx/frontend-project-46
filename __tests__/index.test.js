@@ -6,11 +6,11 @@ test('check json plain', () => {
   expect(gendiff('__fixtures__/file1.json', '__fixtures__/file2.json')).toEqual(result);
 });
 
-test('check json plain', () => {
+test('check yaml plain', () => {
   expect(gendiff('__fixtures__/file1.yaml', '__fixtures__/file2.yaml')).toEqual(result);
 });
 
-test('check json plain', () => {
+test('check yml plain', () => {
   expect(gendiff('__fixtures__/file1.yml', '__fixtures__/file2.yml')).toEqual(result);
 });
 
