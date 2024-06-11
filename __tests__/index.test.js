@@ -1,24 +1,26 @@
 import gendiff from '../src/index.js';
-import result from '../__fixtures__/result.js';
-// import path from 'node:path';
+import path from 'node:path';
+import resultStylish from '../__fixtures__/result.js';
+// import resultPlain from '../__fixtures__/resultPlain.js';
+// import resultJSON from '../__fixtures__/resultJSON.js';
 
-test('check json plain', () => {
-  expect(gendiff('__fixtures__/file1.json', '__fixtures__/file2.json')).toEqual(result);
+const testList = [
+  'json',
+  'yaml',
+  'yml',
+]
+
+// Получение текущей директории и объединение ее с полным путем.
+const getPath = (filepath) => path.resolve(process.cwd(), `__fixtures__/${filepath}`);
+
+describe('gendiff', () => {
+  test.each(testList)('gendiff %s', (format) => {
+    const filepath1 = getPath(`file1.${format}`);
+    const filepath2 = getPath(`file2.${format}`);
+
+    expect(gendiff(filepath1, filepath2)).toEqual(resultStylish);
+    expect(gendiff(filepath1, filepath2, 'styLish')).toEqual(resultStylish);
+    expect(gendiff(filepath1, filepath2, 'plain')).toEqual(resultPlain);
+    expect(gendiff(filepath1, filepath2, 'json')).toEqual(resultJSON);
+  });
 });
-
-test('check yaml plain', () => {
-  expect(gendiff('__fixtures__/file1.yaml', '__fixtures__/file2.yaml')).toEqual(result);
-});
-
-test('check yml plain', () => {
-  expect(gendiff('__fixtures__/file1.yml', '__fixtures__/file2.yml')).toEqual(result);
-});
-
-// const getFixturePath = (filepath) => path.join(__dirname, '..', '__fixtures__', filepath);
-
-// test('genDiff json test', () => {
-//   const path1 = getFixturePath('file1.json');
-//   const path2 = getFixturePath('file2.json');
-//   const gendiffResult = genDiff(path1, path2);
-//   expect(gendiffResult).toEqual(expectedResult);
-// });

@@ -2,6 +2,8 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import _ from 'lodash';
 import parser from './parsers.js';
+import getDifferrenceTree from './buildAST.js';
+import formatter from './formatters/index.js';
 
 // Получение текущей директории и объединение ее с полным путем.
 const getPath = (filepath) => path.resolve(process.cwd(), filepath);
@@ -12,7 +14,7 @@ const getExtension = (filename) => path.extname(filename).slice(1);
 // Функция для чтения файла
 const getData = (filepath) => parser(readFileSync(filepath, 'utf-8'), getExtension(filepath));
 
-const gendiff = (filepath1, filepath2) => {
+const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const path1 = getPath(filepath1);
   const path2 = getPath(filepath2);
   // console.log(path1);
@@ -23,25 +25,28 @@ const gendiff = (filepath1, filepath2) => {
   const data2 = getData(path2);
   // console.log(data1);
   // console.log(data2);
+  return formatter(getDifferrenceTree(data1, data2), format);
+
+
 
   // Достаем ключи объектов, объединяем, сортируем убираем лишее
-  const keys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
+  // const keys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
   // console.log(keys);
 
-  const result = keys.reduce((acc, key) => {
-    if (!Object.hasOwn(data2, key)) {
-      acc.push(`  - ${key}: ${data1[key]}`);
-    } else if (!Object.hasOwn(data1, key)) {
-      acc.push(`  + ${key}: ${data2[key]}`);
-    } else if (data1[key] === data2[key]) {
-      acc.push(`    ${key}: ${data2[key]}`);
-    } else {
-      acc.push(`  - ${key}: ${data1[key]}`);
-      acc.push(`  + ${key}: ${data1[key]}`);
-    }
-    return acc;
-  }, ['{']);
+  // const result = keys.reduce((acc, key) => {
+  //   if (!Object.hasOwn(data2, key)) {
+  //     acc.push(`  - ${key}: ${data1[key]}`);
+  //   } else if (!Object.hasOwn(data1, key)) {
+  //     acc.push(`  + ${key}: ${data2[key]}`);
+  //   } else if (data1[key] === data2[key]) {
+  //     acc.push(`    ${key}: ${data2[key]}`);
+  //   } else {
+  //     acc.push(`  - ${key}: ${data1[key]}`);
+  //     acc.push(`  + ${key}: ${data1[key]}`);
+  //   }
+  //   return acc;
+  // }, ['{']);
 
-  return `${result.join('\n')}\n}`;
+  // return `${result.join('\n')}\n}`;
 };
 export default gendiff;
