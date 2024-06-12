@@ -44,9 +44,9 @@ const buildAST = (data1, data2) => {
     return children;
 };
   
-const getDifferrenceTree = (data1, data2) => ({
+const getDifferenceTree = (data1, data2) => ({
     type: 'root',
     children: buildAST(data1, data2),
 });
 
-export default getDifferrenceTree;
+export default getDifferenceTree;

@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import _ from 'lodash';
 import parser from './parsers.js';
-import getDifferrenceTree from './buildAST.js';
+import getDifferenceTree from './buildAST.js';
 import formatter from './formatters/index.js';
 
 // Получение текущей директории и объединение ее с полным путем.
@@ -25,7 +25,7 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const data2 = getData(path2);
   // console.log(data1);
   // console.log(data2);
-  return formatter(getDifferrenceTree(data1, data2), format);
+  return formatter(getDifferenceTree(data1, data2), format);
 
 
 

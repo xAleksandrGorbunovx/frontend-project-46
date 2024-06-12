@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const indent = ' ';
-const indenSize = 4;
+const indentSize = 4;
 const currentIndent = (depth) => indent.repeat(indentSize * depth - 2);
 const braceIndent = (depth) => indent.repeat(indentSize * depth - indentSize);
 
@@ -52,4 +52,4 @@ const makeStylishDiff = (tree) => {
     return iter(tree, 1);
 };
 
-export default makeStyLishDiff;
+export default makeStylishDiff;
