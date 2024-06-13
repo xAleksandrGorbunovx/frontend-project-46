@@ -14,6 +14,7 @@ const getExtension = (filename) => path.extname(filename).slice(1);
 // Функция для чтения файла
 const getData = (filepath) => parser(readFileSync(filepath, 'utf-8'), getExtension(filepath));
 
+// добавили дефолтное значение stylish на тот случай когда пользователь не указывает значение формата
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const path1 = getPath(filepath1);
   const path2 = getPath(filepath2);
@@ -25,6 +26,7 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const data2 = getData(path2);
   // console.log(data1);
   // console.log(data2);
+  // передаем в функцию данные и формаь который пользователь выбрал.
   return formatter(getDifferenceTree(data1, data2), format);
 
 
