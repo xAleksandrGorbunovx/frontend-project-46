@@ -4,9 +4,9 @@ import makeStylish from './stylish.js';
 // !!!возможно заменить на makeStylishDiff
 
 const formatter = {
-    stylish: makeStylish,
-    plain: makePlain,
-    json: JSON.stringify,
-  };
+  stylish: makeStylish,
+  plain: makePlain,
+  json: JSON.stringify,
+};
 
-  export default (tree, format) => formatter[format](tree);
+export default (tree, format) => formatter[format](tree);

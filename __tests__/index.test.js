@@ -8,7 +8,7 @@ const testList = [
   'json',
   'yaml',
   'yml',
-]
+];
 
 // Получение текущей директории и объединение ее с полным путем.
 const getPath = (filepath) => path.resolve(process.cwd(), `__fixtures__/${filepath}`);

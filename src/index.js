@@ -29,8 +29,6 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
   // передаем в функцию данные и формаь который пользователь выбрал.
   return formatter(getDifferenceTree(data1, data2), format);
 
-
-
   // Достаем ключи объектов, объединяем, сортируем убираем лишее
   // const keys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
   // console.log(keys);

@@ -1,2 +1,2 @@
-const result = ''
+const result = '';
 export default result;
