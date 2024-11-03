@@ -2,15 +2,14 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import _ from 'lodash';
 import parser from './parsers.js';
-import getDifferenceTree from './buildAST.js';
+// import getDifferenceTree from './buildAST.js';
 import formatter from './formatters/index.js';
+import getDifferenceTree from './buildAST.js';
 
 // Получение текущей директории и объединение ее с полным путем.
 const getPath = (filepath) => path.resolve(process.cwd(), filepath);
-
 // шаг 6 получаем расширение файла
 const getExtension = (filename) => path.extname(filename).slice(1);
-
 // Функция для чтения файла
 const getData = (filepath) => parser(readFileSync(filepath, 'utf-8'), getExtension(filepath));
 
@@ -26,7 +25,11 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const data2 = getData(path2);
   // console.log(data1);
   // console.log(data2);
-  // передаем в функцию данные и формаь который пользователь выбрал.
+  // console.log(format);
+
+  // передаем в функцию данные и формат который пользователь выбрал.
+  // console.log('getDifferenceTree-', getDifferenceTree(data1, data2));
+  // console.log(formatter(getDifferenceTree(data1, data2), format));
   return formatter(getDifferenceTree(data1, data2), format);
 
   // Достаем ключи объектов, объединяем, сортируем убираем лишее
@@ -49,4 +52,6 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
 
   // return `${result.join('\n')}\n}`;
 };
+
+
 export default gendiff;
