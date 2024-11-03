@@ -18,10 +18,9 @@ const getFormattedValue = (value) => {
 
 export function makePlainDiff(tree) {
   const iter = (node, path) => node.map((child) => {
-    console.log('child.type----',child.type);
     const currentPath = getPath([path, child.key]);
     switch (child.type) {
-      case 'nasted': 
+      case 'nested': 
         return iter(child.children, currentPath);
     
       case 'added': 
@@ -40,7 +39,7 @@ export function makePlainDiff(tree) {
         return null;
  
       
-      default: 
+      default:
         throw Error('Uncorrect data');
       
     }
