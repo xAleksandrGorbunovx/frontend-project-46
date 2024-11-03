@@ -1,9 +1,9 @@
 import _ from 'lodash';
 
-const indent = ' '; //начальный отступ
+const indent = ' '; // начальный отступ
 const indentSize = 4;
 const currentIndent = (depth) => indent.repeat(indentSize * depth - 2);// текущий отступ
-const braceIndent = (depth) => indent.repeat(indentSize * depth - indentSize);//завершающий отступ 
+const braceIndent = (depth) => indent.repeat(indentSize * depth - indentSize);// завершающий отступ
 
 const joinStrings = (lines, depth) => [
   '{',
@@ -11,7 +11,7 @@ const joinStrings = (lines, depth) => [
   `${braceIndent(depth)}}`,
 ].join('\n');
 
-// функция перевода объекта в строку а если объект то рекурсивно запускаем 
+// функция перевода объекта в строку а если объект то рекурсивно запускаем
 // еще раз stringify на строчке 21
 const stringify = (data, depth) => {
   if ((!_.isObject(data)) || (data === null)) {

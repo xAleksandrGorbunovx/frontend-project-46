@@ -53,5 +53,4 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
   // return `${result.join('\n')}\n}`;
 };
 
-
 export default genDiff;

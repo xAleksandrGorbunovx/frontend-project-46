@@ -18,8 +18,8 @@ describe('gendiff', () => {
     const filepath1 = getPath(`file1.${format}`);
     const filepath2 = getPath(`file2.${format}`);
 
-      // console.log('filepath1 -------', filepath1 )
-      // console.log('filepath2 -------', filepath2 )
+    // console.log('filepath1 -------', filepath1 )
+    // console.log('filepath2 -------', filepath2 )
 
     expect(gendiff(filepath1, filepath2)).toEqual(resultStylish);
     expect(gendiff(filepath1, filepath2, 'stylish')).toEqual(resultStylish);
