@@ -1,8 +1,7 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
-import _ from 'lodash';
+// import _ from 'lodash';
 import parser from './parsers.js';
-// import getDifferenceTree from './buildAST.js';
 import formatter from './formatters/index.js';
 import getDifferenceTree from './buildAST.js';
 
@@ -13,8 +12,9 @@ const getExtension = (filename) => path.extname(filename).slice(1);
 // Функция для чтения файла
 const getData = (filepath) => parser(readFileSync(filepath, 'utf-8'), getExtension(filepath));
 
-// добавили дефолтное значение stylish на тот случай когда пользователь не указывает значение формата
-const gendiff = (filepath1, filepath2, format = 'stylish') => {
+// добавили дефолтное значение stylish на тот случай
+// когда пользователь не указывает значение формата
+const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const path1 = getPath(filepath1);
   const path2 = getPath(filepath2);
   // console.log(path1);
@@ -54,4 +54,4 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
 };
 
 
-export default gendiff;
+export default genDiff;

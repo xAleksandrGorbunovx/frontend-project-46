@@ -1,10 +1,10 @@
 import makePlain from './plain.js';
-import makeStylish from './stylish.js';
+import makeStylishDiff from './stylish.js';
 
 // !!!возможно заменить на makeStylishDiff
 
 const formatter = {
-  stylish: makeStylish,
+  stylish: makeStylishDiff,
   plain: makePlain,
   json: JSON.stringify,
 };
