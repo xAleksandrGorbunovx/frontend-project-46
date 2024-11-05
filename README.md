@@ -7,13 +7,15 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/804241963446cf5b0b5c/test_coverage)](https://codeclimate.com/github/xAleksandrGorbunovx/frontend-project-46/test_coverage)
 
-# **"hexlet project difference"**
+# **"Hexlet project difference"**
 
 #### The program is designed to compare two files, determine similarities and differences.
 **Supports the following file formats for comparison:**
 * json
 * yaml
 * yml
+
+
 **The program outputs data in three output formats:**
 * stylish (default output format)
 * plain
@@ -21,14 +23,16 @@
 
 ## Installation
 
-***СLI ***
-```git clone git@github.com:xAleksandrGorbunovx/frontend-project-46.git```
-```cd frontend-project-46```
+_СLI_
+```git clone git@github.com:xAleksandrGorbunovx/frontend-project-46.git```  
+
+```cd frontend-project-46```  
+
 ``` make install ```
 
 ## Usage
 
-***СLI ***
+_СLI_
     node bin/gendiff -h
     Usage: hexlet project difference [options] <filepath1> <filepath2>
     Compares two configuration files and shows a difference.
@@ -37,7 +41,8 @@
       -f, --format [type]  output format (default: "stylish")
       -h, --help           display help for command
 
-e.g.: ```node bin/gendiff -f stylish file1.json file2.json```
+e.g.: ```node bin/gendiff -f stylish file1.json file2.json```  
+
 Example of output in stylish format
 
     {
