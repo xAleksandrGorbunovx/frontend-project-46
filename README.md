@@ -97,7 +97,8 @@ Example of output in stylish format
         }
     }
 
-The example uses these fixtures
+The example uses these fixtures  
+
 ***file1.json:***  
 
     {
@@ -161,6 +162,10 @@ The example uses these fixtures
     }
     }
 
-Recording of viewing options and running the program.
-   [![asciicast](https://asciinema.org/a/rogaXWypa7pmresRphOH8OvLB.svg)](https://asciinema.org/a/rogaXWypa7pmresRphOH8OvLB)
+**Recording of viewing options and running the program.**
+   [![asciicast](https://asciinema.org/a/rogaXWypa7pmresRphOH8OvLB.svg)](https://asciinema.org/a/rogaXWypa7pmresRphOH8OvLB)  
+
+
+### Recording the launch of a program with information output in the default stylish format.  
+   [![asciicast](https://asciinema.org/a/4d0picHFn7VkOIQ5apc.svg)](https://asciinema.org/a/4d0picHFn7VkOIQ5apc) 
    
