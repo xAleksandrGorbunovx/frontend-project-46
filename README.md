@@ -98,7 +98,8 @@ Example of output in stylish format
     }
 
 The example uses these fixtures
-***file1.json:***
+***file1.json:***  
+
     {
     "common": {
         "setting1": "Value 1",
@@ -126,7 +127,8 @@ The example uses these fixtures
     }
     }
 
-***file2.json:***
+***file2.json:***  
+
     {
     "common": {
         "follow": false,
