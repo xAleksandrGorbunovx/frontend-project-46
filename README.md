@@ -23,7 +23,8 @@
 
 ## Installation
 
-_СLI_
+_СLI_  
+
 ```git clone git@github.com:xAleksandrGorbunovx/frontend-project-46.git```  
 
 ```cd frontend-project-46```  
@@ -32,14 +33,18 @@ _СLI_
 
 ## Usage
 
-_СLI_
-    node bin/gendiff -h
-    Usage: hexlet project difference [options] <filepath1> <filepath2>
-    Compares two configuration files and shows a difference.
-    Options:
-      -V, --version        output the version number
-      -f, --format [type]  output format (default: "stylish")
-      -h, --help           display help for command
+_СLI_  
+
+gendiff -h
+
+  Usage: gendiff [options] <filepath1> <filepath2>
+
+  Compares two configuration files and shows a difference.
+
+  Options:
+    -V, --version        output the version number
+    -f, --format [type]  output format
+    -h, --help           output usage information
 
 e.g.: ```node bin/gendiff -f stylish file1.json file2.json```  
 
