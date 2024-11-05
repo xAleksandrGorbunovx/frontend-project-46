@@ -35,7 +35,17 @@ _СLI_
 
 _СLI_  
 
-``` gendiff -h ``` 
+``` gendiff -h ```   
+  Usage: gendiff [options] <filepath1> <filepath2>
+
+  Compares two configuration files and shows a difference.
+
+  Options:
+    -V, --version        output the version number
+    -f, --format [type]  output format
+    -h, --help           output usage information  
+    
+
 
 e.g.: ```node bin/gendiff -f stylish file1.json file2.json```  
 
