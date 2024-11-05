@@ -44,7 +44,8 @@ gendiff -h
   Options:
     -V, --version        output the version number
     -f, --format [type]  output format
-    -h, --help           output usage information
+    -h, --help           output usage information  
+    
 
 e.g.: ```node bin/gendiff -f stylish file1.json file2.json```  
 
