@@ -166,6 +166,11 @@ The example uses these fixtures
    [![asciicast](https://asciinema.org/a/rogaXWypa7pmresRphOH8OvLB.svg)](https://asciinema.org/a/rogaXWypa7pmresRphOH8OvLB)  
 
 
-### Recording the launch of a program with information output in the default stylish format.  
-   [![asciicast](https://asciinema.org/a/4d0picHFn7VkOIQ5apc.svg)](https://asciinema.org/a/4d0picHFn7VkOIQ5apc) 
-   
+### Recording the launch of a program with information output in the default _stylish_ format.  
+   [![asciicast](https://asciinema.org/a/4d0picHFn7VkOIQ5apc.svg)](https://asciinema.org/a/4d0picHFn7VkOIQ5apc)   
+
+### Recording the launch of a program with information output in the default _plain_ format.  
+   [![asciicast](https://asciinema.org/a/hxagkdSGPyuvSwOuyCitdsZ.svg)](https://asciinema.org/a/hxagkdSGPyuvSwOuyCitdsZ)  
+
+### Recording the launch of a program with information output in the default _JSON_ format.  
+   [![asciicast](https://asciinema.org/a/MK7SlXuGdJ8kLizvJSsU9Y0n.svg)](https://asciinema.org/a/MK7SlXuGdJ8kLizvJSsU9Y0n) 
